@@ -36,6 +36,7 @@
 			$data['ventasMDia'] = $this->model->selectVentasMes($anio,$mes);
 			//dep($data['ventasMDia']);exit;
 			$data['ventasAnio'] = $this->model->selectVentasAnio($anio);
+			$data['dolar'] = $this->model->getMonedaUsd();
 			//dep($data['ventasAnio']);exit;
 			if( $_SESSION['userData']['idrol'] == RCLIENTES ){
 				$this->views->getView($this,"dashboardCliente",$data);

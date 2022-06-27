@@ -126,5 +126,11 @@
 			$request = $this->select_all($sql);
 			return $request;
 		}
+
+		public function getMonedaUsd(){
+			$sql = "SELECT value FROM monedas WHERE name ='USD'";
+			$request = $this->select_all($sql);
+			return $request[0]['value'];
+		}
 	}
  ?>

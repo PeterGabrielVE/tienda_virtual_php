@@ -83,7 +83,8 @@
                   <td><?= $pedido['idpedido'] ?></td>
                   <td><?= $pedido['nombre'] ?></td>
                   <td><?= $pedido['status'] ?></td>
-                  <td class="text-right"><?= SMONEY." ".formatMoney($pedido['monto']) ?></td>
+                  <td class="text-right"><?= SMONEY." ".formatMoney($pedido['monto']) ?><br>
+                  <?= SMONEYVZLA." ".formatMoney($pedido['monto']*$data['dolar']) ?></td>
                   <td><a href="<?= base_url() ?>/pedidos/orden/<?= $pedido['idpedido'] ?>" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                 </tr>
                 <?php } 
