@@ -23,6 +23,9 @@
 	const SMONEY = "$";
 	const CURRENCY = "USD";
 
+	const SMONEYVZLA = "BsD";
+	const CURRENCYVZLA = "Bolivar";
+
 	//Api PayPal
 	//SANDBOX PAYPAL
 	const URLPAYPAL = "https://api-m.sandbox.paypal.com";
@@ -100,6 +103,5 @@
 	//REDES SOCIALES
 	const FACEBOOK = "https://www.facebook.com/bodegonelextra";
 	const INSTAGRAM = "https://www.instagram.com/bodegonelextra/";
-	
 
  ?>
