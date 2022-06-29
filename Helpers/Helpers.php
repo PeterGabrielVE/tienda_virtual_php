@@ -410,4 +410,12 @@
         }
     }
 
+    function getMonedaUsd2(){
+        require_once("Libraries/Core/Mysql.php");
+        $con = new Mysql();
+        $sql = "SELECT value FROM monedas WHERE name ='USD'";
+        $request = $con->select($sql);
+        return $request['value'];
+    }
+
  ?>

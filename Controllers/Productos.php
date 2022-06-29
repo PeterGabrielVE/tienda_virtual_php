@@ -40,7 +40,16 @@
 						$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 					}
 
-					$arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
+					$valBs = getMonedaUsd2();
+					$precioUsd = SMONEY.' '.formatMoney($arrData[$i]['precio']);
+					$precioBs = SMONEYVZLA.' '.formatMoney($arrData[$i]['precio']*$valBs);
+
+					$arrData[$i]['precio'] = $precioUsd.'<br/> '.$precioBs;
+
+					if($_SESSION['permisosMod']['r']){
+						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['idproducto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
+					}
+					//$arrData[$i]['precioBsD'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
 					if($_SESSION['permisosMod']['r']){
 						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['idproducto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
 					}
@@ -204,6 +213,7 @@
 			}
 			die();
 		}
+
 	}
 
  ?>

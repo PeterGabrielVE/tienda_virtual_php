@@ -43,10 +43,11 @@ class Pedidos extends Controllers{
 				if($arrData[$i]['idtransaccionpaypal'] != ""){
 					$arrData[$i]['transaccion'] = $arrData[$i]['idtransaccionpaypal'];
 				}
-
-				$arrData[$i]['monto'] = SMONEY.formatMoney($arrData[$i]['monto']);
-
-				
+				$valBs = getMonedaUsd2();
+				$montoUsd = SMONEY.' '.formatMoney($arrData[$i]['monto']);
+				$montoBs = SMONEYVZLA.' '.formatMoney($arrData[$i]['monto']*$valBs);
+				$arrData[$i]['monto'] = $montoUsd.'<br/> '.$montoBs;
+		
 				if($_SESSION['permisosMod']['r']){
 					
 					$btnView .= ' <a title="Ver Detalle" href="'.base_url().'/pedidos/orden/'.$arrData[$i]['idpedido'].'" target="_blanck" class="btn btn-info btn-sm"> <i class="far fa-eye"></i> </a>
